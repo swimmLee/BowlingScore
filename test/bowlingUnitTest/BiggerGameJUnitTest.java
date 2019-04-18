@@ -32,7 +32,7 @@ public class BiggerGameJUnitTest {
     @Test
     public void testSetGameTestScore(){
         g.setGameFrames();
-        g.setCalculateGameScore(21);
+        g.setCalculateGameScore();
         int score = g.getScore();
         assertEquals("the game total is incorrect.",210,score);
     }

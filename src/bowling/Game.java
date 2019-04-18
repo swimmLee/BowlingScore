@@ -29,11 +29,13 @@ public class Game {
         setScore(0);
         int j = 0;
         Scanner kb = new Scanner(System.in);
+        setMessage("Here You can enter pin count for each roll of game.");
+        setMessage("There is no error Checking so follow the rules for bowling.\n");
         for(int i=0; i<10; i++){
             setMessage("enter pin count for first ball for frame "+ (i+1));
             roll[j] = Integer.parseInt(kb.nextLine());
             if(roll[j] == 10){
-                setMessage("Strike - congradulations.");
+                setMessage("Strike - congradulations.\n");
                 if(i==9 && (roll[j] == 10)){
                     setMessage("enter your second ball for frame " + (i+1));
                     roll[j+1] = Integer.parseInt(kb.nextLine());
@@ -44,12 +46,12 @@ public class Game {
                 j++;
             }
             else if(roll[j] <10 && roll[j] >= 0){
-                setMessage("enter pin count for second ball of frame " + (i+1));
+                setMessage("pin count for second ball of frame " + (i+1));
                 roll[j+1] = Integer.parseInt(kb.nextLine());
                 if(roll[j] + roll[j+1] == 10)
-                    setMessage("Spare covered - nice roll");
+                    setMessage("Spare covered - nice roll\n");
                 if(i==9 && (roll[j]+roll[j+1] == 10)){
-                    setMessage("enter your third ball for frame " + (i+1));
+                    setMessage("enter Third ball for frame " + (i+1));
                     roll[j+2] = Integer.parseInt(kb.nextLine());
                     j++;
                 }
@@ -72,7 +74,7 @@ public class Game {
      * @param pins pin fall each roll
      * @param rolls the number of rolls
      */
-    public void setTestScore(int pins, int rolls){//
+    public void setTestOpenScore(int pins, int rolls){//
         for(int i=0; i<rolls; i++){
             roll[i] = pins;
             roll[i+1] = pins;
@@ -89,10 +91,9 @@ public class Game {
     
     /**
      * Calculates the game score for array of pin fall
-     * @param rolls rolls for game. max for game.
-     * @return game total score.
+     * @return score the integer score
      */
-    public int setCalculateGameScore(int rolls){//
+    public int setCalculateGameScore(){//
         int i=0;
         for(int j=0; j<10; j++){
             if(roll[i] == 10){

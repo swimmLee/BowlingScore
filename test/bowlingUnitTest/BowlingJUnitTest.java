@@ -29,7 +29,7 @@ public class BowlingJUnitTest {
     
     @Test
     public void testSetTestScore(){
-        g.setTestScore(4,20);
+        g.setTestOpenScore(4,20);
         int score = g.getScore();
         assertEquals("The score is incorrect.",60,score);
     }
